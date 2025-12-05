@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sri Chaitanya Bharati</title>
+
+  <!-- 🎨 LOOK (CSS) -->
+  <style>
+    /* Theme colors (change these!) */
+    :root {
+      --bg: #8f4949ff;     /* page background */
+      --text: #222222;   /* main text color */
+      --primary: #0a43beff;/* button color */
+      --card: #3f864fff;   /* panel background */
+      --border: #965096ff; /* panel border */
+      --font: system-ui, Segoe UI, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 16px }
+
+    /* Simple header */
+    header { border-bottom: 1px solid var(--border); }
+    .nav { height: 60px; display:flex; align-items:center; justify-content:space-between }
+    .brand { font-weight: 700 }
+    .links a { margin-left: 12px; text-decoration: none; color: #555 }
+
+    /* Hero (big intro section) */
+    .hero { padding: 48px 0; text-align: center }
+    .btn-primary {
+      background: var(--primary); color: white; border: none;
+      padding: 10px 16px; border-radius: 8px; cursor: pointer;
+    }
+
+    /* Card grid */
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px }
+    .card {
+      grid-column: span 4;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px;
+    }
+    @media (max-width: 800px) { .card { grid-column: span 6 } }
+    @media (max-width: 520px) { .card { grid-column: span 12 } }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 24px 0; text-align:center; color:#666 }
+  </style>
+</head>
+<body>
+  <!-- 🧱 CONTENT (HTML) -->
+  <header>
+    <div class="container nav">
+      <div class="brand">MySite</div>
+      <nav class="links">
+        #featuresFeatures</a>
+        #contactContact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero container">
+    <h1>Radhe Krishna</h1>
+    <p>Change text, colors, and layout to make it yours.</p>
+    <button class="btn-primary" id="ctaBtn">Click me</button>
+  </section>
+
+  <main id="features" class="container grid">
+    <article class="card">
+      <h3>Change Colors</h3>
+      <p>Edit them in the <code>:root</code> section above.</p>
+    </article>
+    <article class="card">
+      <h3>Change Text</h3>
+      <p>Edit any text between HTML tags like &lt;h1&gt; and &lt;p&gt;.</p>
+    </article>
+    <article class="card">
+      <h3>Add Behavior</h3>
+      <p>Use the JavaScript at the bottom for clicks, toggles, etc.</p>
+    </article>
+  </main>
+
+  <section id="contact" class="container" style="padding:24px 0">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <label>
+        Name<br>
+        <input type="text" id="name" required style="width:100%;padding:8px;border:1px solid var(--border);border-radius:8px">
+      </label><br><br>
+      <label>
+        Email<br>
+        <input type="email" id="email" required style="width:100%;padding:8px;border:1px solid var(--border);border-radius:8px">
+      </label><br><br>
+      <button type="submit" class="btn-primary">Send</button>
+    </form>
+  </section>
+
+  <footer>© 2025 MySite</footer>
+
+  <!-- ⚙️ BEHAVIOR (JavaScript) -->
+  <script>
+    // Button behavior: show a simple message
+    document.getElementById('ctaBtn').addEventListener('click', function () {
+      alert('You clicked the button 🎉');
+    });
+
+    // Basic form check: stop submission if empty and show a friendly alert
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!name || !email) {
+        e.preventDefault();
+        alert('Please fill in your name and email.');
+      }
+    });
+  </script>
+</body>
+</html>
